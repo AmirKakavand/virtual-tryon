@@ -6,7 +6,7 @@ import { useLoader } from '@react-three/fiber'
 const Fat = (props) => {
   const obj = useLoader(OBJLoader, '/assets/avatars/fat/fatfart.obj')
   return (
-    <primitive object={obj} position={props.position} />
+    <primitive object={obj} position={props.position} visible={props.visible} />
   )
 }
 

@@ -6,7 +6,7 @@ import { useLoader } from '@react-three/fiber'
 const Thin = (props) => {
   const obj = useLoader(OBJLoader, '/assets/avatars/thin/smallfart.obj')
   return (
-    <primitive object={obj} position={props.position} />
+    <primitive object={obj} position={props.position} visible={props.visible} />
   )
 }
 

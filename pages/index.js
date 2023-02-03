@@ -45,7 +45,7 @@ export default function Home() {
         <button onClick={() => setViewThinPants(!viewThinPants)}>
           Pants(Thin)
         </button>
-        <Canvas camera={{ position: [0, 0, 2] }}>
+        <Canvas camera={{ position: [0, 0, 2] }} frameloop={"demand"}>
           {/* lights */}
           <ambientLight intensity={0.1} />
           <directionalLight position={[2, 2, 2]} intensity={0.1} />
@@ -54,15 +54,15 @@ export default function Home() {
           <OrbitControls />
 
 
-          {/* Clothes */}
           <Suspense fallback={null}>
           {/* Avatar */}
-            {avatar && <Thin position={[0, -1, 0]} />}
-            {!avatar && <Fat position={[0, -1, 0]} />}
-            {viewFatTshirt && <FatTshirt position={[0, -1.13, 0.0005]} scale={0.0011} />}
-            {viewFatPants && <Fatpants position={[0, -1, 0]} scale={0.001} />}
-            {viewThinTshirt && <ThinTshirt position={[0, -1, 0]} scale={0.001} />}
-            {viewThinPants && <Thinpants position={[0, -1, 0]} scale={0.001} />}
+            <Thin position={[0, -1, 0]} visible={avatar} />
+            <Fat position={[0, -1, 0]} visible={!avatar} />
+          {/* Clothes */}
+            <FatTshirt position={[0, -1.13, 0.0005]} scale={0.0011} visible={viewFatTshirt} />
+            <Fatpants position={[0, -1, 0]} scale={0.001} visible={viewFatPants} />
+            <ThinTshirt position={[0, -1, 0]} scale={0.001} visible={viewThinTshirt} />
+            <Thinpants position={[0, -1, 0]} scale={0.001} visible={viewThinPants} />
           </Suspense>
         </Canvas>
       </main>
