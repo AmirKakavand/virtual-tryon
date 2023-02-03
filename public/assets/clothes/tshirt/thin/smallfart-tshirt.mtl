@@ -1,0 +1,10 @@
+# MTL Exporter v1.0 by Seungwoo Oh at CLO - Virtual Fashion Inc.
+newmtl Wool_FRONT_386994
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.045000 0.045000 0.045000
+Ns 9.901810
+illum 2
+map_Ka smallfart-tshirt_diffuse_1001.png
+map_Kd smallfart-tshirt_diffuse_1001.png
+map_bump smallfart-tshirt_normal_1001.png
